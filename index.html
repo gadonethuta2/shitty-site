@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Image Button Hover Fade</title>
+<style>
+.button {
+  position: relative;
+  display: inline-block;
+  width: 200px;   /* adjust size */
+  height: 200px;
+  cursor: pointer;
+}
+
+.button img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  top: 0;
+  left: 0;
+  transition: opacity 0.4s ease;
+}
+
+/* top image (default visible) */
+.button .img-top {
+  opacity: 1;
+  z-index: 2;
+}
+
+/* bottom image (hidden until hover) */
+.button .img-bottom {
+  opacity: 0;
+  z-index: 1;
+}
+
+/* hover effect */
+.button:hover .img-top {
+  opacity: 0;
+}
+
+.button:hover .img-bottom {
+  opacity: 1;
+}
+</style>
+</head>
+<body>
+<h1>Hello</h1>
+<div class="button">
+  <img src="red.png" class="img-top" alt="Button default">
+  <img src="blue.png" class="img-bottom" alt="Button hover">
+</div>
+
+</body>
+</html>
